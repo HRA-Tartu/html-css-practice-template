@@ -16,10 +16,13 @@ li {
 }
 
 .container {
-    width: 70%;
+    width: 75%;
     margin: auto;
 }
-
+.container-fluid{
+    width: 90%;
+    margin: auto;
+}
 @font-face {
     font-family: montserratLight;
     src: url('../fonts/Montserrat-Light.ttf');
@@ -60,7 +63,7 @@ li {
     vertical-align: top;
 }
 
-#navbar-wrapper>ul {
+#navbar-wrapper > ul {
     text-align: center;
 }
 
@@ -69,7 +72,9 @@ li {
     margin: 18px 15px;
     position: relative;
 }
-
+#navbar-wrapper .dropdown-list{
+    z-index:9999999;
+}
 #navbar-wrapper>ul>li:hover .dropdown-list {
     visibility: visible;
     opacity: 1;
@@ -84,10 +89,23 @@ li {
     transition: all 0.4s ease-in-out;
     font-weight: bold;
 }
-
+#navbar-wrapper > ul > li > a + i{
+    position: absolute;
+    top:50%;
+    right:-15%;
+    transform: translateY(-50%);
+    transition: all 0.4s ease-in-out;
+    transition-delay:0.5s;
+}
 #navbar-wrapper>ul>li>a:hover {
     color: #2ed3ae;
     transition: all 0.4s ease-in-out;
+}
+#navbar-wrapper>ul>li>a:hover + i{
+   
+    color:#2ed3ae;
+    transition: all 0.4s ease-in-out;
+    transform:translateY(-50%) rotate(180deg);
 }
 
 .dropdown-list {
@@ -131,4 +149,140 @@ li {
     border-color: #2ed3ae;
     transition: all 0.4s ease-in-out;
     color: #fff;
+}
+
+
+/* End navbar */
+/* End header */
+
+
+/* Start main */
+
+/* Start intro */
+#intro{
+    padding: 150px 0px;
+    text-align: center;
+    height: 85vh;
+    background-image: url('../images/intro.jpg');
+    background-size: cover;
+    background-position:center;
+}
+
+#intro h1{
+    font-size: 4em;
+    position: relative;
+    animation-name: MovementWithScale;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    opacity: 0;
+}
+
+#intro h1 span{
+    font-size: 0.5em;
+    color:#2ed3ae;
+   transform: translateY(-100%);
+    display: inline-block;
+}
+#intro p{
+    font-size: 2.3em;
+    margin:20px 0px;
+    animation-name: MovementWithScale;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+#intro #intro-buttons{
+    animation-name: MovementWithScale;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    opacity: 0;
+}
+#intro .site-button:first-child{
+    background-color: #2ed3ae;
+    border-color:#2ed3ae;
+    color:#fff;
+    margin-right: 20px;
+}
+#intro .site-button:first-child:hover{
+    background-color: #000;
+    border-color:#000;
+}
+#intro .site-button:last-child{
+    background-color: #000;
+    border-color: #000;
+    color:#fff;
+
+}
+#intro .site-button:last-child:hover{
+    background-color: #2ed3ae;
+    border-color: #2ed3ae;
+}
+
+
+@keyframes MovementWithScale{
+    from{
+        transform:translateY(100%) scale(0.8,0.8);
+        opacity: 0;
+    }
+    to{
+        transform:translateY(0) scale(1,1);
+        opacity: 1;
+    }
+}
+
+/* Intro end */
+
+/* Consistency start */
+#consistency{
+    padding:100px 0px;
+}
+#consistency .container{
+    text-align: center;
+}
+
+#consistency h2{
+    font-size: 2.3em;
+    margin-bottom: 40px;
+}
+#consistency p{
+    font-size: 1.2em;
+    line-height: 1.9em;
+    padding:0px 150px;
+}
+
+
+/* Consistency end */
+
+/* Power start */
+#power #power-text,
+#power #power-image{
+    display: inline-block;
+}
+#power-text{
+    padding:70px 40px 70px 12.5%;
+    width: 49%;
+    vertical-align: top;
+    background-color:#f8f8f8;
+}
+#power-text h2{
+    font-size: 2.3em;
+    margin-bottom: 40px;
+}
+#power-text p{
+    font-size: 1.2em;
+    line-height: 1.9em;
+}
+#power-image{
+    width: 50%;
+    height: 453px;
+}
+#power-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
