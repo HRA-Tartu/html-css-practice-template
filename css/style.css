@@ -286,3 +286,60 @@ li {
     height: 100%;
     object-fit: cover;
 }
+
+
+/* Power end */
+
+/* Portfolio start */
+#portfolio {
+    padding:150px 0px;
+}
+.portfolio-item{
+    cursor: pointer;
+    width: 20%;
+    display: inline-block;
+    margin:0px 2.5%;
+    margin-bottom: 50px;
+    position: relative;
+}
+.portfolio-item:nth-child(4){
+    margin:0px 2.5% 0px 1%;
+}
+.portfolio-item:last-child{
+    margin:0px 2.5% 0px 1%;
+}
+.portfolio-item img{
+    width: 100%;
+}
+
+.portfolio-item:hover .overlay{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+.portfolio-item:hover .overlay i{
+    transform:  translate(-50%,-50%) scale(1,1);
+    transition: all 0.5s ease-in-out;
+}
+.portfolio-item .overlay{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: rgba(46, 211, 174, 0.9);
+}
+
+.portfolio-item .overlay i{
+    color:#fff;
+    position: absolute;
+    top:50%;
+    left:50%;
+    font-size: 2.7em;
+    transform: translate(-50%,-50%) scale(0,0);
+    transition: all 0.5s ease-in-out;
+}
